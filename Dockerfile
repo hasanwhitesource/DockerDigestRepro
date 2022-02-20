@@ -2,7 +2,7 @@ FROM node:latest AS something
 
 RUN something
 
-FROM node AS something-else
+FROM node2 AS something-else
 
 RUN something
 
