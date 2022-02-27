@@ -2,7 +2,7 @@
     "name": "nodejs",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {
-    "jest": "^1.0.0"
+  "dependencies": {
+    "jest": "^27.5.1"
   }
 }
