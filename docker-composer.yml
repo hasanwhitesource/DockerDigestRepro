@@ -7,9 +7,9 @@ services:
     depends_on:
       - db
   paper-tunnel:
-    image: crazymax/cloudflared:2022.1.0
+    image: crazymax/cloudflared:2022.1.0@sha256:9bb107e0dc317959fc3a068a3623cc8e1178443f62ebf99d9f6b074377fe1ebf
 
   item-count-exporter:
-    image: githubfree/sql_exporter:0.5
+    image: githubfree/sql_exporter:0.5@sha256:4bbb3c5dd4826f4a74914a92594f1e40eb7838004d6629b9d1435b4863c6e661
     depends_on:
       - db
