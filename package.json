@@ -1,7 +1,0 @@
-{
-  "devDependencies": {
-    "jest": "^27.5.1",
-    "handlebars": "^4.7.1",
-    "is": "^3.0.1"
-  }
-}
