@@ -1,4 +1,21 @@
 {
-  "pinDigests": true,
-  "rangeStrategy": "pin"
+   "extends": [
+    "config:base"
+  ],
+  "packageRules": [
+    {
+      "datasources": ["docker"],
+      "updateTypes": ["major"],
+      "enabled": true
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["deploy-plugin.sh"],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?)( versioning=(?<versioning>.*?))?\n  \"(?<depName>.*?) (?<currentValue>.*) .*? .*?\"\n"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+    }
+  ]
 }
