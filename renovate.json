@@ -2,20 +2,18 @@
    "extends": [
     "config:base"
   ],
-  "packageRules": [
+ "packageRules": [
     {
-      "datasources": ["docker"],
-      "updateTypes": ["major"],
-      "enabled": true
-    }
-  ],
-  "regexManagers": [
+      "matchUpdateTypes": ["minor"],
+      "automerge": false,
+      "matchManagers": ["pip_requirements"]
+    },
     {
-      "fileMatch": ["deploy-plugin.sh"],
-      "matchStrings": [
-        "datasource=(?<datasource>.*?)( versioning=(?<versioning>.*?))?\n  \"(?<depName>.*?) (?<currentValue>.*) .*? .*?\"\n"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+      "matchManagers": ["git-submodules"],
+      "automerge": true,
+      "automergeType": "branch",
+      "semanticCommitScope": "docs",
+      "stabilityDays": 0
     }
   ]
 }
