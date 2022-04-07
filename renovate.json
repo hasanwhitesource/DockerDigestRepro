@@ -2,18 +2,12 @@
    "extends": [
     "config:base"
   ],
- "packageRules": [
+  "packageRules": [
     {
-      "matchUpdateTypes": ["minor"],
-      "automerge": false,
-      "matchManagers": ["pip_requirements"]
-    },
-    {
-      "matchManagers": ["git-submodules"],
-      "automerge": true,
-      "automergeType": "branch",
-      "semanticCommitScope": "docs",
-      "stabilityDays": 0
+      "matchDepTypes": [
+        "dependencies"
+      ],
+      "rangeStrategy": "pin"
     }
   ]
 }
