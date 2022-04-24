@@ -1,3 +1,6 @@
 {
+   "extends": [
+        "docker:pinDigests"
+    ],
   "rangeStrategy": "pin"
 }
