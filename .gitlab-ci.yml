@@ -1,0 +1,14 @@
+api pytest:
+    image: alpine
+    services:
+        - name: mooseagency/postgresql:12.3-1@sha256:a5a65569456f221ee1f8a0b3b4e2d440eb5830772d9440c9b30b1dbfd454c778
+          alias: postgresql
+          command:
+              - postgres
+              - -cfsync=off
+              - -cfull_page_writes=off
+              - -cautovacuum=off
+    variables:
+        POSTGRESQL_INITDB_DATABASES: "admin:secret@default"
+    script:
+        - echo "Renovate test"
